@@ -1,5 +1,5 @@
 ---
-ntp-servers:
+ntp_servers:
   - server 0.debian.pool.ntp.org
 ntp_restricts:
   - "-4 default kod notrap nomodify nopeer noquery limited"
