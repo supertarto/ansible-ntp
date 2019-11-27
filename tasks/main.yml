@@ -1,2 +1,17 @@
 ---
+- name: Install NTP packages
+  package:
+    name: ntp
+    state: present
 
+- name: Copy configurations file
+  tempalte:
+    src: ntp.conf.j2
+    dest: "/etc/ntp.conf"
+  notify: Restart NTP
+
+- name: Ensure NTP is enabled on boot
+  service:
+    name: ntp
+    state: started
+    enabled: true
