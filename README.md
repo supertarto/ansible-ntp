@@ -5,7 +5,6 @@ Install and configure a NTP client with Ansible
 ## Requirements
 None
 ## Tested plateform
-* Debian 9 (Stretch)
 * Debian 10 (Buster)
 
 ## Role variables
