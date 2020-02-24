@@ -1,5 +1,6 @@
 # Ansible NTP
 [![Build Status](https://travis-ci.org/supertarto/ansible-ntp.svg?branch=master)](https://travis-ci.org/supertarto/ansible-ntp)
+
 Install and configure a NTP client with Ansible
 
 ## Requirements
