@@ -1,17 +1,17 @@
 ---
 - name: Install NTP packages
-  package:
+  ansible.builtin.package:
     name: ntp
     state: present
 
 - name: Copy configurations file
-  template:
+  ansible.builtin.template:
     src: ntp.conf.j2
     dest: "/etc/ntp.conf"
   notify: Restart NTP
 
 - name: Ensure NTP is enabled on boot
-  service:
+  ansible.builtin.service:
     name: ntp
     state: started
     enabled: true
