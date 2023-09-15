@@ -8,7 +8,8 @@ None
 
 ## Tested plateform
 * Debian 10 (Buster)
-* Debian 11 (Buster)
+* Debian 11 (Bullseye)
+* Debian 12 (Bookworm)
 
 ## Role variables
 List of NTP server to get the time from.

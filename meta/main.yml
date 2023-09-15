@@ -12,6 +12,7 @@ galaxy_info:
       versions:
         - "buster"
         - "bulleyes"
+        - "bookworm"
 
   galaxy_tags:
     - ntp

@@ -43,6 +43,7 @@ jobs:
         distrib:
           - debian10:latest
           - debian11:latest
+          - debian12:latest
 
     steps:
       - name: Check out the codebase.
