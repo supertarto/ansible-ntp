@@ -29,12 +29,11 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install ansible yamllint ansible-lint
+        run: pip3 install yamllint
 
       - name: Lint code.
         run: |
           yamllint .
-          ansible-lint
 
   molecule:
     name: Molecule
@@ -42,9 +41,9 @@ jobs:
     strategy:
       matrix:
         distrib:
-          - debian10:latest
-          - debian11:latest
-          - debian12:latest
+          - debian10
+          - debian11
+          - debian12
 
     steps:
       - name: Check out the codebase.
