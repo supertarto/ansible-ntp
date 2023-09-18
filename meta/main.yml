@@ -5,7 +5,7 @@ galaxy_info:
   role_name: ntp
   namespace: "supertarto"
   license: "GNU General Public License v3.0"
-  min_ansible_version: 2.8
+  min_ansible_version: "2.8"
 
   platforms:
     - name: "Debian"
