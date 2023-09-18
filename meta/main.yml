@@ -5,14 +5,14 @@ galaxy_info:
   role_name: ntp
   namespace: "supertarto"
   license: "GNU General Public License v3.0"
-  min_ansible_version: "2.8"
+  min_ansible_version: "2.10"
 
   platforms:
-    - name: "Debian"
+    - name: Debian
       versions:
-        - "buster"
-        - "bulleyes"
-        - "bookworm"
+        - buster
+        - bulleyes
+        - bookworm
 
   galaxy_tags:
     - ntp
