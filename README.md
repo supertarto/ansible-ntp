@@ -44,7 +44,7 @@ ntp_restricts:
 ## Installation
 
 ```bash
-ansible-galaxy install supertarto.ntp
+ansible-galaxy role install supertarto.ntp
 ```
 
 ## License
