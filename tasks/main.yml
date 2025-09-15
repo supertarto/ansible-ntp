@@ -11,7 +11,7 @@
 - name: Copy configurations file
   ansible.builtin.template:
     src: timesyncd.conf.j2
-    dest: "/etc/systemd/timesyncd.conf
+    dest: "/etc/systemd/timesyncd.conf"
   register: ntp_config_change
   notify: Restart timesyncd
 
