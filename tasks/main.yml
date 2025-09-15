@@ -1,17 +1,27 @@
 ---
-- name: Install NTP packages
+- name: Install systemd-timesyncd
   ansible.builtin.package:
-    name: ntp
+    name: "systemd-timesyncd"
     state: present
+
+- name: Set TimeZone
+  community.general.timezone:
+    name: "{{ ntp_time_zone }}"
 
 - name: Copy configurations file
   ansible.builtin.template:
-    src: ntp.conf.j2
-    dest: "/etc/ntp.conf"
-  notify: Restart NTP
+    src: timesyncd.conf.j2
+    dest: "/etc/systemd/timesyncd.conf
+  register: ntp_config_change
+  notify: Restart timesyncd
 
-- name: Ensure NTP is enabled on boot
+- name: Set NTP Sync
+  command: "timedatectl set-ntp true"
+  when: ( ntp_config_change.exists )
+  notify: Restart timesyncd
+
+- name: Ensure timesyncd is enabled on boot
   ansible.builtin.service:
-    name: ntp
+    name: systemd-timesyncd
     state: started
     enabled: true
