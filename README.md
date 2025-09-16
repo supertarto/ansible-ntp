@@ -10,6 +10,7 @@ None
 * Debian 12 (Bookworm)
 * Debian 13 (Trixie)
 
+
 ## Role variables
 List of NTP server to get the time from.
 
