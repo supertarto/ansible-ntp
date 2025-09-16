@@ -19,9 +19,3 @@
   ansible.builtin.command: "timedatectl set-ntp true"
   when: ntp_config_change.changed
   notify: Restart timesyncd
-
-- name: Ensure timesyncd is enabled on boot
-  ansible.builtin.service:
-    name: systemd-timesyncd
-    state: started
-    enabled: true
