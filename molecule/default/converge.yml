@@ -11,18 +11,6 @@
       when: ansible_os_family == 'Debian'
       changed_when: false
 
-    - name: Wait for systemd to be running
-      command: systemctl is-system-running
-      register: systemd_status
-      retries: 10
-      delay: 2
-      until: systemd_status.stdout in ['running', 'degraded']
-      ignore_errors: true
-
-    - name: Ensure D-Bus is started
-      command: systemctl start dbus
-      ignore_errors: true
-
   roles:
     - role: supertarto.ntp
 
