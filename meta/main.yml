@@ -4,6 +4,7 @@ dependencies: []
 galaxy_info:
   role_name: ntp
   author: "Xavier Binois"
+  namespace: supertarto
   description: "Install and configure a NTP Client with ansible in Debian, using Timesyncd"
   license: "GNU General Public License v3.0"
   min_ansible_version: 2.10
