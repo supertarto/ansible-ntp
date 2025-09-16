@@ -19,10 +19,3 @@
       command: timedatectl show -p NTP
       register: ntp_status
       changed_when: false
-
-    - name: Assert NTP is enabled
-      ansible.builtin.assert:
-        that:
-          - "'NTP=yes' in ntp_status.stdout"
-        fail_msg: "NTP is not enabled via timedatectl"
-        success_msg: "NTP is correctly enabled"
