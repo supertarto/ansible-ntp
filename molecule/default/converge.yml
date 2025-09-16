@@ -4,12 +4,33 @@
   become: true
 
   pre_tasks:
-    - name: Update apt cache.
+    - name: Update apt cache
       ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 600
       when: ansible_os_family == 'Debian'
       changed_when: false
 
+    - name: Wait for systemd to be running
+      command: systemctl is-system-running
+      register: systemd_status
+      retries: 10
+      delay: 2
+      until: systemd_status.stdout in ['running', 'degraded']
+      ignore_errors: true
+
   roles:
     - role: supertarto.ntp
+
+  post_tasks:
+    - name: Check if NTP is enabled
+      command: timedatectl show -p NTP
+      register: ntp_status
+      changed_when: false
+
+    - name: Assert NTP is enabled
+      ansible.builtin.assert:
+        that:
+          - "'NTP=yes' in ntp_status.stdout"
+        fail_msg: "NTP is not enabled via timedatectl"
+        success_msg: "NTP is correctly enabled"
