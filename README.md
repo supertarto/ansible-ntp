@@ -32,9 +32,7 @@ ntp_time_zone: "Europe/Paris"
   roles:
     - supertarto.ntp
   vars:
-    ntp-servers:
-        - myserver1
-        - myserver2  
+    ntp_servers: myserver1
 ```
 
 ## Installation
