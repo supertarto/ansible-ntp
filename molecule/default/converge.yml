@@ -19,6 +19,10 @@
       until: systemd_status.stdout in ['running', 'degraded']
       ignore_errors: true
 
+    - name: Ensure D-Bus is started
+      command: systemctl start dbus
+      ignore_errors: true
+
   roles:
     - role: supertarto.ntp
 

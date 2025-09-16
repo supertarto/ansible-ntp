@@ -35,7 +35,6 @@ ntp_time_zone: "Europe/Paris"
     ntp_servers: myserver1
 ```
 
-
 ## Installation
 
 ```bash
