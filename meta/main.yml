@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name:
+  role_name: ntp
   author: "Xavier Binois"
   description: "Install and configure a NTP Client with ansible in Debian, using Timesyncd"
   license: "GNU General Public License v3.0"
