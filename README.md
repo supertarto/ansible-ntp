@@ -1,4 +1,4 @@
-# Ansible NTP
+# Ansible Role NTP
 [![CI](https://github.com/supertarto/ansible-ntp/workflows/CI/badge.svg?event=push)](https://github.com/supertarto/ansible-ntp/actions?query=workflow%3ACI)
 
 Configure a NTP client on Debian, using timesyncd, with Ansible
